@@ -1,0 +1,67 @@
+ ##########################################
+     AWS S3 - Event Notification
+##########################################
+
+----*** Create SNS Topic ***----
+
+>> Create Topic
+
+>> After creating topic add email subscription
+
+>> Go under Topic -> Edit -> Access Policy
+ (Copy ARN from existing policy)
+
+
+{
+ "Version": "2012-10-17",
+ "Id": "example-ID",
+ "Statement": [
+ {
+ "Sid": "Example SNS topic policy",
+ "Effect": "Allow",
+ "Principal": {
+ "Service": "s3.amazonaws.com"
+ },
+ "Action": [
+ "SNS:Publish"
+ ],
+ "Resource": "<SNS-topic-ARN>",
+ "Condition": {
+ "ArnLike": {
+ "aws:SourceArn": "arn:aws:s3:*:*:<bucket-name>"
+ },
+ "StringEquals": {
+ "aws:SourceAccount": "<bucket-owner-account-id>"
+ }
+ }
+ }
+ ]
+} 
+
+
+  ----*** Enable Event Notification ***----
+
+ >> Go under S3 bucket -> Properties -> Event Notifications
+
+ ##########################################
+     AWS S3 - Static Website
+ ##########################################
+
+-->> Bucket Policy
+
+{
+ "Version": "2012-10-17",
+ "Statement": [
+ {
+ "Sid": "PublicReadGetObject",
+ "Effect": "Allow",
+ "Principal": "*",
+ "Action": [
+ "s3:GetObject"
+ ],
+ "Resource": [
+ "arn:aws:s3:::<Bucket-Name>/*"
+ ]
+ }
+ ]
+}
