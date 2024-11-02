@@ -1,6 +1,7 @@
 #!/bin/bash
-echo "Startinng Apache2 at $(date)" >> /tmp/apache_cron.log
-/usr/bin/systemctl start apache2 >> /tmp/apache_cron.log 2>&1
+echo "Startinng Apache2 at $(date)" >> /tmp/apache_cron.log      #it will create a log /tmp/ directory
+/usr/bin/systemctl start apache2 >> /tmp/apache_cron.log 2>&1    #give service name as per your requirment
 
 
-#Give file name end with (.sh) extension
+                                                                 #Give file name end with (.sh) extension
+                                                                 
