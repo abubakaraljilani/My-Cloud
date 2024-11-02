@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "Startinng Apache2 at $(date)" >> /tmp/apache_cron.log
+/usr/bin/systemctl start apache2 >> /tmp/apache_cron.log 2>&1
+
+
+#Give file name end with (.sh) extension
