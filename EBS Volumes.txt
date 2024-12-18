@@ -16,7 +16,7 @@ EBS volumes
 > Chek if there is any data on volume
 # file -s /dev/xvdf
 
-> Create a file system for volume
+> Create a file system for volume Formate Commond
 # mkfs -t ext4 /dev/xvdf
 
 # mkdir /fileserver
