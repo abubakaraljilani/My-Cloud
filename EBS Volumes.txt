@@ -11,25 +11,36 @@ EBS volumes
 > Take control
 
 > Check whether volume is attached
-# lsblk
+$ lsblk
 
 > Chek if there is any data on volume
-# file -s /dev/xvdf
+$ file -s /dev/xvdf
 
-> Create a file system for volume Formate Commond
-# mkfs -t ext4 /dev/xvdf
+> Create a file system for 
+> volume Formate Commond HDD
 
-# mkdir /fileserver
+$ mkfs -t ext4 /dev/xvdf
+
+> In linix mount everything (/) Forward Slash
+
+$ mkdir /fileserver
  
-# mount /dev/xvdf /fileserver
+$ mount /dev/xvdf /fileserver
 
-# cd /fileserver
+$ cd /fileserver
+
+$ ls
+> if lost+found directory present we sucessfully mount
+
+$ rm -rf lost+found
 
 > Create some files using nano
 
 > Unmount the volume 
-# umount /dev/xvdf
+
+$ umount /dev/xvdf
 
 > Check whether volume is unmounted or not
-# cd /fileserver
-# ls 
+
+$ cd /fileserver
+$ ls 
